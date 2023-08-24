@@ -43,14 +43,9 @@ export class App extends React.Component {
   };
 
   contactsDeleter = id => {
-    this.setState(
-      prevState => ({
-        contacts: prevState.contacts.filter(contact => contact.id !== id),
-      }),
-      () => {
-        localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-      }
-    );
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
   };
 
   contactsAdder = values => {
